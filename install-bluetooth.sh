@@ -75,6 +75,14 @@ fi
 EOF
 chmod 755 /usr/local/bin/bluetooth-udev
 
+# Enable A2DP volume control
+mkdir -p /etc/systemd/system/bluetooth.service.d
+cat <<'EOF' > /etc/systemd/system/bluetooth.service.d/override.conf
+[Service]
+ExecStart=
+ExecStart=/usr/libexec/bluetooth/bluetoothd --plugin=a2dp
+EOF
+
 cat <<'EOF' > /etc/udev/rules.d/99-bluetooth-udev.rules
 SUBSYSTEM=="input", GROUP="input", MODE="0660"
 KERNEL=="input[0-9]*", RUN+="/usr/local/bin/bluetooth-udev"
