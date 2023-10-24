@@ -75,9 +75,9 @@ fi
 EOF
 chmod 755 /usr/local/bin/bluetooth-udev
 
+# Disableinternal Bluetooth
+cat <<'EOF' >> /boot/config.txt
 # Disable internal Bluetooth
-cat << 'EOF' >>
-# Disable Bluetooth
 dtoverlay=disable-bt
 EOF
 
