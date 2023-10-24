@@ -26,7 +26,7 @@ For these devices, you might want to try [HiFiBerryOS](https://github.com/hifibe
 
 The installation script asks whether to install each component.
 
-    wget -q https://github.com/nicokaiser/rpi-audio-receiver/archive/main.zip
+    wget -q https://github.com/belafonte/rpi-audio/archive/main.zip
     unzip main.zip
     rm main.zip
 
