@@ -30,7 +30,7 @@ The installation script asks whether to install each component.
     unzip main.zip
     rm main.zip
 
-    cd rpi-audio-receiver-main
+    cd rpi-audio-main
     sudo ./start.sh
 
     reboot
