@@ -75,6 +75,16 @@ fi
 EOF
 chmod 755 /usr/local/bin/bluetooth-udev
 
+# Disable internal Bluetooth
+cat << 'EOF' >>
+# Disable Bluetooth
+dtoverlay=disable-bt
+EOF
+
+sudo systemctl disable hciuart.service
+sudo systemctl disable bluealsa.service
+sudo systemctl disable bluetooth.service
+
 # Enable A2DP volume control
 mkdir -p /etc/systemd/system/bluetooth.service.d
 cat <<'EOF' > /etc/systemd/system/bluetooth.service.d/override.conf
